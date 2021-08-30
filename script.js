@@ -18,13 +18,12 @@ const search = async () => {
 };
 
 const resultDiv = data => {
-    console.log(data.cod);
     console.log(data);
     if (data.cod === 200) {
         searchResult.innerHTML = `
         <div class='mx-auto text-center'>
             <img src='weather.png'>
-            <h2>${data.name}</h2>
+            <h2>Country: ${data.sys.country}, City: ${data.name}</h2>
             <h3>${((data.main.temp) - 273.15).toFixed(2)}&#8451</h3>
         <h4 class='fw-light'>${data.weather[0].main}</h4>
         </div >
