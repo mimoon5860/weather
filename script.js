@@ -23,7 +23,8 @@ const resultDiv = data => {
         searchResult.innerHTML = `
         <div class='mx-auto text-center'>
             <img src='weather.png'>
-            <h2>Country: ${data.sys.country}, City: ${data.name}</h2>
+            <h2>Country: ${data.sys.country}</h2> 
+            <h2>City: ${data.name}</h2>
             <h3>${((data.main.temp) - 273.15).toFixed(2)}&#8451</h3>
         <h4 class='fw-light'>${data.weather[0].main}</h4>
         </div >
@@ -37,8 +38,10 @@ const resultDiv = data => {
 const loadingg = document.getElementById('loading');
 const loading = () => {
     loadingg.innerHTML = `
-    <div class='mx-auto text-center'>
-        <img width='100px' src='loading.gif'>
+    <div class='mx-auto mt-5 text-center'>
+        <div class="spinner-border text-primary" role="status">
+            <span class="visually-hidden">Loading...</span>
+        </div>
     </div >
     `;
 };
